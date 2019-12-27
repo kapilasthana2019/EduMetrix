@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+.main-container{
+   margin-top: -34px;
+   min-height: 580px;
+   padding: 20px;
+   /* margin-left: 42px; */
+   margin-left: 200px;
+  
+  background-color: rgb(241, 244, 245);
+    
+}
+.main-containerToggle{
+    margin-top: -34px;
+    min-height: 600px;
+    margin-left: 42px;
+   
+    /* margin-left: 200px; */
+   /* background-color: rgb(219, 226, 233); */
+     
+ }
+.content-header{
+    
+    
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+   /* background-color: yellow; */
+  
+}
+
+#heading{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+}
+
+#sub-heading{
+    display: flex;
+    padding: 10px;
+    background-color: rgb(241, 238, 238);
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom:1px solid rgb(214, 212, 212);
+}
+.content-part{
+    margin-top: 15px;
+    
+   /* background-color: #d2d6de; */
+   
+   font-size: 18px;
+   border: 1px solid rgb(214, 212, 212);
+ 
+
+}
+
+#inner-sub-heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#page-heading{
+    margin-left: 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+#docIcon{
+    height: 16px;
+    width: 16px;
+    margin-top: 5px;
+}
+
+#showing-pagination{
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.export-buttons{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: flex-end;
+    border-bottom:1px solid rgb(214, 212, 212);
+}
+
+#btns{
+    display: flex;
+    position: relative;
+    width: 13%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px 10px 10px 10px;
+}
+
+#all-btn{
+    font-size: 12px;
+    border: 1px solid gray;
+    background-color: rgb(231, 227, 227);
+}
+#all-img{
+    margin-right: 4px;
+    height: 14px;
+    width: 14px;
+}
+#export-img{
+    height: 14px;
+    width: 14px;   
+}
+
+.editButton{
+   border: none;
+   background-color: transparent;
+}

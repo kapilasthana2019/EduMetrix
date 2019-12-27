@@ -1,0 +1,180 @@
+
+
+.signup-container{
+
+  background-color: white;
+  position: relative;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;;
+ margin: 50px auto;
+  border: 1px solid gray;
+  border-radius: 10px;
+
+}
+#heading-part{
+  margin-top: 20px;
+  max-width: 350px;
+  font-size: 24px;
+}
+
+#sub-title{
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+
+.main-container{
+margin-top: 20px;
+ display: flex;
+ flex-direction: row;
+ /* background-color: gray; */
+ flex-wrap: wrap;
+ width: 100%;
+ justify-content: space-between;
+}
+
+#details-part{
+  padding: 10px;
+  /* background-color: red; */
+  border-right: 1px solid rgb(228, 223, 223);
+  width: 50%;
+}
+
+#usernamewithpass{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ 
+}
+
+#user-name{
+
+  margin-top: 10px;
+
+}
+#justName{
+  margin-top: 10px;
+  width: 50%;
+}
+#surName{
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 50%;
+}
+
+
+#companylogo{
+  width: 150px;
+  height: 150px;
+}
+
+#logo-img{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#logo-title{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+#get-start-btn{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+#getStarted{
+    padding: 8px;
+    border-radius: 30px;
+    font-size: 14px;
+    /* background-color: blue; */
+    transition: all linear 0.1s;
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    width: 260px;
+    color: #edeeee;
+    box-sizing: border-box;
+    max-width: 100%;
+    border: 1px solid #b1b1aa;
+    background-color: #164e64;
+    box-shadow: #fff 0px 1px 0px inset;
+    background-image: linear-gradient(top, #164e64, #093445);
+    cursor: pointer;
+
+}
+
+#have-account{
+  margin-top:20px;
+  margin-bottom: 60px;;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #0b3d52;
+  cursor: pointer;
+}
+
+#imagepart{
+  padding: 10px;
+width: 40%;
+}
+
+#checkbox-terms{
+  display: flex;
+  flex-direction: row;
+
+}
+
+#terms{
+ margin-top: 10px;
+ font-size: 14px;
+ font-family: "Roboto", sans-serif;
+}
+
+@media screen and (max-width:900px){
+
+  .signup-container{
+    background-color: white;
+    margin: 0px auto;
+    position: relative;
+    width: 80%;
+    border: 1px solid white
+  
+  }
+  #details-part{
+
+    width: 100%;
+    border-right: 1px solid white
+
+  }
+  #imagepart{
+    display: none;
+}
+}
+@media screen and (max-width:500px){
+  #usernamewithpass{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #justName{
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+ 
+  #surName{
+    width: 100%;
+    margin-left: 0px;
+  }
+}
+
+
+

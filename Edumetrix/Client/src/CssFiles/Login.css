@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+.Login {
+    box-sizing: border-box;
+    max-width: 35%;
+    padding: 10px;
+    margin: 90px auto;
+    border: 1px solid gray;
+    border-radius: 10px; 
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.20), 0 10px 10px rgba(0, 0, 0, 0.20);
+}
+
+.LoginContainer {
+    /* background-color: red; */
+    width: 60%;
+    padding: 20px;
+    min-height: 400px;;
+    position: relative;
+    margin: auto auto;
+}
+
+.logo {
+    height: 70px;
+    width: 70px;
+    background-color: white;
+    border-color: #a9abac;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(55% - 50px);
+}
+
+.company-profile {
+    position: relative;
+}
+
+#profile-img {
+    height: 70px;
+    width: 70px;
+}
+
+#signIn-title {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+#emailText {
+    margin-top: 10px;
+    max-width: 300px;
+    /* background-color: red; */
+}
+
+#EmailField {
+    max-width: 300px;
+}
+
+.signin-btn {
+    margin-left: -10px;
+}
+
+#signInBtn {
+    border-radius: 30px;
+    background-color: #008CBA;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 260px;
+    max-width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+}
+#sign-up-with{
+    
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    /* background-color: red;; */
+}
+
+#or{
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+}
+
+
+#signInBtn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#signInBtn span::after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#signInBtn:hover span {
+    padding-right: 25px;
+}
+
+#signInBtn:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.forgot-password {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: rgb(88, 88, 209);
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+}
+
+.forgot-password:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#create-title {
+    margin-top: 20px;
+   
+}
+#sign-up{
+    padding: 8px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: all linear 0.1s;
+    display: block;
+    width: 260px;
+    color: #0b3d52;
+    box-sizing: border-box;
+    max-width: 100%;
+    border: 1px solid #b1b1aa;
+    background-color: #ecece9;
+    box-shadow: #fff 0px 1px 0px inset;
+    background-image: linear-gradient(to bottom, #ecece9, #bfbfb8);
+    cursor: pointer;
+
+}
+
+.social-icons {
+    margin-top: 20px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#fb-icon {
+    margin-right: 10px;
+}
+
+#googleImg {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    ;
+}
+
+@media screen and (max-width:600px) {
+    .Login {
+        max-width: 100%;
+        padding: 10px;
+        margin: 50px auto;
+        border: 1px solid white;
+        border-radius: 0px;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.20), 0 0px 0px rgba(0, 0, 0, 0.20);
+    }
+    #signInBtn {
+        border-radius: 4px;
+        background-color: #008CBA;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 15px;
+        padding: 10px;
+        width: 300px;
+        max-width: 100%;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    #signInBtn {
+        border-radius: 4px;
+        background-color: #008CBA;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 15px;
+        padding: 10px;
+        width: 300px;
+        max-width: 95%;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 10px;
+    }
+}

@@ -1,0 +1,305 @@
+.container{
+    background-color: #164e64;
+    position: relative;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+   margin: 50px auto;
+    border: 1px solid gray;
+    border-radius: 10px
+}
+
+.side-image-container{
+   
+    min-width: 20%;
+    padding: 10px 0px 10px 10px; 
+}
+
+#image-part{
+    
+    
+    margin-top: 100px;
+}
+
+#title-part{
+  
+    color: white;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+.sub-container{
+    background-color: white;
+    overflow: hidden;
+    margin-top: 20px;
+    padding: 40px;
+    width: 70%;
+    /* height: 700px; */
+    border-radius: 80px 0px 10px 0px;
+}
+
+#img-part-manage{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#side-img {
+    height: 100px;
+    width: 10
+    0px;
+}
+
+#following-title{
+ 
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    color: #164e64;
+}
+#otpMsg-title{
+    margin-top: 15px;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+}
+.otp-fields{
+    /* background-color: rgb(216, 216, 197); */
+    margin-top: 10px;
+    display: flex;
+    max-width: 80%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.otp-fields-verify{
+    margin-top: 10px;
+    display: flex;
+    max-width: 80%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+}
+
+#verifiedMsg{
+    margin-top: 10px;
+    margin-left: 10px;
+    color: rgb(9, 218, 9);
+    font-size: 13px;
+}
+
+#verifyErrorMsg{
+    margin-top: 10px;
+    margin-left: 10px;
+    color: rgb(236, 55, 10);
+    font-size: 13px;
+}
+#verifyBtn{
+    margin-top: 5px;
+    width: 170px;
+    max-width: 100%;
+    transition: all linear 0.1s;
+     display: block;
+    color: white; 
+    font-size: 13px;
+    background-color: #164e64;
+    padding: 8px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    border: 1px solid gray;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#vresendBtn{
+    margin-top: 5px;
+    margin-left: 15px;
+    width: 170px;
+    max-width: 100%;
+    transition: all linear 0.1s;
+     display: block;
+    color: white; 
+    font-size: 13px;
+    background-color: #164e64;
+    padding: 8px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    border: 1px solid gray;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#key{
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 10px 0px 0px 10px;
+    border: 1px solid rgb(212, 209, 209);
+}
+
+#Dob{
+    width: 45%;
+}
+#input{
+   
+    margin-top: 10px;
+    border-radius: 15px 15px 15px 15px;
+    border: 1px solid rgb(212, 209, 209);
+    /* background-color: red; */
+}
+#disable-input{
+   
+    margin-top: 10px;
+    border-radius: 15px 15px 15px 15px;
+    border: 1px solid rgb(212, 209, 209);
+    background-color: rgb(228, 225, 225);
+}
+
+#email-otp{
+    color: #164e64;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+#text{
+    margin-left: 15px;
+}
+
+.dob-phone{
+   
+    margin-top: 10px;
+    display: flex;
+    max-width: 90%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#addressfield{
+    height: 200px;
+}
+
+#dropDownField{
+    min-width: 205px;
+}
+#drop-down{
+   background-color: transparent;
+   margin-top: 10px;
+   border:1px solid rgb(212, 209, 209);
+   border-radius: 15px;
+   height: 29px;
+    min-width: 50%;
+   width: 100%;
+    /* background-color: red; */
+}
+#submitbtn{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width:600px){
+   
+    .container{
+        background-color: #164e64;
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+        border: 1px solid gray;
+        margin: 0px auto;
+        border-radius: 10px
+    }
+    .side-image-container{
+   
+        min-width: 100%;
+        
+        padding: 00px 0px 0px 0px; 
+    }
+    #img-part-manage{
+        margin-top: -90px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .sub-container{
+        background-color: white;
+        position: relative;
+        /* margin-top: -60px; */
+        padding: 18px;
+        width: 94%;
+        /* height: 700px; */
+        border-radius: 0px 0px 0px 0px;
+    }
+  }
+
+
+  @media screen and (max-width:500px){
+   
+    #vresendBtn{
+        margin-top: 5px;
+        margin-left: 1px;
+        width: 170px;
+        max-width: 100%;
+        transition: all linear 0.1s;
+         display: block;
+        color: white; 
+        font-size: 13px;
+        background-color: #164e64;
+        padding: 8px;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        border: 1px solid gray;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .otp-fields{
+        /* background-color: rgb(216, 216, 197); */
+        margin-top: 10px;
+        display: flex;
+        max-width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+   
+    }
+    #Dob{
+        width: 100%;
+    }
+    
+  }
+  
+  @media screen and (max-width:350px){
+   
+    .container{
+        background-color: #164e64;
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+        border: 1px solid gray;
+        margin: 0px 0px;
+        border-radius: 10px
+    }
+    .side-image-container{
+   
+        min-width: 100%;
+        
+        padding: 00px 0px 0px 0px; 
+    }
+    #img-part-manage{
+        margin-top: -90px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .sub-container{
+        background-color: white;
+        position: relative;
+        /* margin-top: -60px; */
+        padding: 10px;
+        width: 95%;
+        /* height: 700px; */
+        border-radius: 0px 0px 0px 0px;
+    }
+  }
