@@ -45,6 +45,8 @@ class ImageUploader extends Component {
             0,
             uri => {
                    
+                console.log("image url",uri);
+                
                 this.props.getImage(uri)
         //           this.setState({
         //             fetchImg: uri 

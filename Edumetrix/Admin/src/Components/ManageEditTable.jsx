@@ -39,8 +39,6 @@ class ManageEditTable extends Component {
 
     EmailhandleCheck = () => {
 
-        console.log("email check button clicked");
-
         this.setState({
             EmailCheck: !this.state.EmailCheck
         })

@@ -4,7 +4,14 @@ import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
 import '../CssFiles/SignUp.css'
 import { Typography } from '@material-ui/core';
+import ReactTelInput from 'react-telephone-input'
+import 'react-telephone-input/lib/withStyles'
+
+// import IntlTelInput from 'react-intl-tel-input';
+// import 'react-intl-tel-input/dist/main.css';
+
 const obj = new validation()
+// var ReactTelInput = require('react-telephone-input');
 
 class SignUp extends Component {
     constructor(props) {
@@ -24,7 +31,9 @@ class SignUp extends Component {
             nameError: "",
             surName: "",
             surNameError: "",
-            checkVal: true
+            checkVal: true,
+            dialCode:"",
+            country:""
 
 
         }
@@ -86,7 +95,7 @@ class SignUp extends Component {
     }
 
     name = () => {
-     
+
         const validationResult = obj.username(this.state.name)
 
         this.setState({
@@ -95,7 +104,7 @@ class SignUp extends Component {
         return validationResult.result
     }
     sername = () => {
-     
+
         const validationResult = obj.username(this.state.surName)
 
         this.setState({
@@ -120,14 +129,14 @@ class SignUp extends Component {
         if (this.emailValidate()) {
             flag = true
         }
-        if(this.name()){
+        if (this.name()) {
             flag = true
         }
-        if(this.sername()){
+        if (this.sername()) {
             flag = true
         }
 
-        if(!flag){
+        if (!flag) {
 
             var obj = {
                 userName: this.state.userName,
@@ -141,11 +150,36 @@ class SignUp extends Component {
 
             //api hit here
         }
-       
+
         this.props.history.push('/GetStarted')
         console.log("value", obj);
 
     }
+
+    handleInputChange = (telNumber, selectedCountry) => {
+        var telno = telNumber
+        var country = selectedCountry
+
+        this.setState({
+            dialCode:telNumber,
+            country:selectedCountry.name
+        })
+        // console.log("telno",telno);
+        // console.log("countryName",country.name);
+        
+    }
+
+    handleInputBlur = (telNumber, selectedCountry) => {
+        // var telno = telNumber
+
+        // console.log("inpurBlur",telno);
+        
+        console.log("in state",this.state.dialCode , "&& country",this.state.country);
+        
+       
+    }
+
+
 
     render() {
 
@@ -154,12 +188,12 @@ class SignUp extends Component {
 
                 <div className="signup-container">
 
-                    
+
                     <div id="heading-part">
-                    Create your Edumetrix Account 
+                        Create your Edumetrix Account
                             </div>
-                            <div id = "sub-title">
-                    to continue with us 
+                    <div id="sub-title">
+                        to continue with us
                             </div>
                     <div className="main-container">
 
@@ -200,11 +234,20 @@ class SignUp extends Component {
                             </div>
 
                             <div id="user-name">
-                                <TextField
+
+                                <ReactTelInput
+                                    defaultCountry="in"
+                                    flagsImagePath={require('../Assets/flags.png')}
+
+                                    onChange={this.handleInputChange}
+                                    onBlur={ this.handleInputBlur}
+                                />
+
+                                {/* <TextField
 
                                     error={this.state.mobile_no_Error}
                                     type="text"
-                                    id="mobileNo"
+                                    
                                     name="mobile_no"
                                     label="mobile number"
                                     helperText={this.state.mobile_no_Error}
@@ -213,7 +256,7 @@ class SignUp extends Component {
                                     variant="outlined"
                                     margin="dense"
                                     fullWidth
-                                />
+                                /> */}
                             </div>
 
                             <div id="user-name">

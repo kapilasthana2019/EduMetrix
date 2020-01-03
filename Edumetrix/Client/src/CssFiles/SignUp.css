@@ -64,6 +64,9 @@ margin-top: 20px;
   width: 50%;
 }
 
+#mobileNo{
+background-color: red;
+}
 
 #companylogo{
   width: 150px;

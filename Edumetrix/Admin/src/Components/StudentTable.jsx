@@ -15,7 +15,7 @@ class StudentTable extends Component {
 
         this.state = {
             posts: [],
-            editPopup:true,
+            editPopup:false,
             editRowData:""
         }
     }
@@ -45,7 +45,10 @@ class StudentTable extends Component {
        
         this.setState({
             editPopup: !this.state.editPopup
-        }) 
+        })
+        
+        console.log("edit button");
+        
     }
 
     editButton =(event,props)=>{

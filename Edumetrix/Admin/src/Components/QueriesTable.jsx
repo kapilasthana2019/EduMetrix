@@ -3,7 +3,7 @@ import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 import '../CssFiles/StudentRecord.css'
 import Tooltip from '@material-ui/core/Tooltip';
-
+import QueryViewPopup from '../Components/QueryViewPopup'
 
 
 class QueriesTable extends Component {
@@ -12,7 +12,10 @@ class QueriesTable extends Component {
         super(props)
 
         this.state = {
-            posts: []
+            posts: [],
+           open:false,
+           props:"",
+           value:""
         }
     }
 
@@ -28,14 +31,51 @@ class QueriesTable extends Component {
             this.setState({
                 posts: posts
             })
-
-
         })
     }
 
     columnClicked = (id) => {
         console.log("column click",id);
     }
+
+
+    setStateFunction = async()=>{
+        
+            this.setState({
+                open:! this.state.open
+            })
+           await this.setState({
+            value:"view"
+            })
+    }
+
+
+
+    handleView = async (event,props)=>{
+
+     await this.setStateFunction()
+
+       this.setState({
+            props: props.original,
+           
+        })
+    }
+
+    handleUpdate = async (event,props)=>{
+      
+        await this.setStateFunction()
+
+        this.setState({
+            props: props.original,
+            value:"update"
+        })
+    }
+
+    handleDelete = (event,props)=>{
+
+        console.log("delete", props.original);
+    }
+
     render() {
 
         const columns = [
@@ -154,7 +194,7 @@ class QueriesTable extends Component {
                     whiteSpace:"unset"
 
                 },
-                minWidth:30
+                minWidth:40
             },
             {
                 headerStyle: {
@@ -218,33 +258,35 @@ class QueriesTable extends Component {
                 Cell: props => {
                     return (
                         <div>
-                            <Tooltip title = "edit">
-                            <button className="editButton">
+                            <Tooltip title = "view">
+                            <button onClick = {event=>this.handleView(event,props)}
+                            className="editButton">
                                 <img src ={require('../Assets/eye.png')} id="docIcon"/>
                             </button>
                             </Tooltip>
 
-                            <Tooltip title = "edit">
-                            <button className="editButton">
+                            <Tooltip title = "Update">
+                            <button
+                            onClick = {event=>this.handleUpdate(event,props)}
+                            className="editButton">
                                 <img src ={require('../Assets/pencil.png')} id="docIcon"/>
                             </button>
                             </Tooltip>
 
                             <Tooltip title = "Delete">
-                            <button className="editButton">
+                            <button
+                            onClick = {event=>this.handleDelete(event,props)}
+                            className="editButton">
                                  <img src ={require('../Assets/delete.png')} id="docIcon"/>
                             </button>
                             </Tooltip>
                         </div>
-
 
                     )
                 },width: 90
                 ,
                  filterable: false
             }
-
-
 
         ]
         return (
@@ -254,7 +296,7 @@ class QueriesTable extends Component {
                 noDataText={"please wait..."}
                 data={this.state.posts}
                
-                defaultPageSize={2}
+                defaultPageSize={5}
                 
                 // className="highlight"
                 getTrProps={(state, rowInfo, column) => {
@@ -269,13 +311,23 @@ class QueriesTable extends Component {
                         }
                     }
                     return {};
-
-
                 }}
 
             >
-
             </ReactTable>
+
+            {
+                (this.state.open) ?
+               
+                <QueryViewPopup 
+                 data ={this.state.props}
+                 open = {this.state.open}
+                 value={this.state.value}
+                 refresh={this.setStateFunction}
+                 />
+                 : ""
+            }
+
             </div>
         )
     }
