@@ -1,0 +1,219 @@
+.detail-container{
+    width: 570px;
+}
+.sub-container{
+    padding: 10px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    
+}
+#student-id-show{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#student-id{
+font-size: 18px;
+font-family: "Roboto", sans-serif;
+}
+
+#closeBtn{
+    display: flex;
+    flex-direction: row;
+    width: 40px;
+    justify-content: center;
+    cursor: pointer;  
+}
+
+.data-container-show{
+    padding: 10px;
+}
+
+.pop-up-container{
+    
+    margin-top: 10px;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+
+#table th{
+    padding: 10px;
+    border-right: 1px solid rgb(230, 226, 226);
+    width: 35%;
+}
+#table td{
+    padding: 10px;
+   
+}
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+
+  #check{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #user-photo{
+      height: 100px;
+      width: 100px;
+  }
+
+  #front-photo{
+    height: 400px;
+    width: 300px;
+  }
+  #back-photo{
+
+    height: 400px;
+    width: 300px;
+  }
+
+  .Referer-title{
+    background-color: #164e64;
+    padding: 5px;
+   
+    }
+
+    .total-payble{
+        background-color: #164e64;
+        padding: 5px;
+        margin-top: 15px;
+    }
+    .total-payble li{
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        color: white;
+    }
+
+    .Referer-title li{
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        color: white;
+    }
+
+    #chat-history-btn{
+
+        font-weight: bold;
+        font-size: 11px;
+        text-transform: lowercase;
+    }
+
+    #verified-checkbox{
+        margin:auto auto ;
+        margin-right: 60px;
+        display: flex;
+        width: 150px;
+    }
+    #verify-msg{
+       margin-top: 5px;
+       margin-left: 10px;
+       font-family: "Roboto", sans-serif;
+       color: darkgreen;
+    }
+    #notverify-msg{
+        margin-top: 5px;
+        margin-left: 10px;
+        font-family: "Roboto", sans-serif;
+        color: darkred;
+    }
+
+    .Earning-title{
+        background-color: #164e64;
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .Earning-title li{
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        color: white;
+    }
+
+    .earning-tables{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+    }
+
+    #total-val{
+        font-size: 16px;
+        font-family: "Roboto", sans-serif;
+        color: white;
+    }
+    #likes-counter{
+        background-color: #164e64;
+        padding: 4px;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+        color: white; 
+    }
+   
+    #referer-table{
+       
+        border-bottom: 1px solid lightgray;
+    }
+    #likes-table{
+        border-bottom: 1px solid lightgray;
+    }
+
+    #share-table{
+        border-bottom: 1px solid lightgray;
+    }
+
+    #likes-table th{
+        padding: 10px;
+        
+        border-right: 1px solid rgb(230, 226, 226);
+        width: 56%;
+    }
+
+    #share-table th{
+        padding: 10px;
+        border-right: 1px solid rgb(230, 226, 226);
+        width: 60%;
+    }
+    #referer-table th{
+        padding: 10px;
+        border-right: 1px solid rgb(230, 226, 226);
+        width: 60%;
+    }
+
+    #referer-table td{
+        padding: 10px;  
+    }
+     #likes-table td{
+        padding: 10px;  
+     }
+     #share-table td{
+         padding: 10px;
+     }
+
+     #total-amount-pay{
+        background-color: #164e64;
+        color: white;
+     }
+
+   #pay-td{
+       text-align: end;
+   }
+   #total-td{
+    background-color: #164e64;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    text-align: end;
+   }
+
+   .close-nd-edit{
+       width: 99%;
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+   }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import '../CssFiles/StudentRecord.css'
 import Tooltip from '@material-ui/core/Tooltip';
-import StudentTable from './StudentTable'
+import QueriesTable from './QueriesTable'
 
 
 
-class StudentRecords extends Component {
+class Queries extends Component {
 
     constructor(props) {
         super(props)
@@ -31,7 +31,7 @@ class StudentRecords extends Component {
                 <div className="content-header">
 
                     <div id="heading">
-                        Students
+                        Queries
                      </div>
 
                     <div className="content-part">
@@ -40,7 +40,7 @@ class StudentRecords extends Component {
 
                             <div id="inner-sub-heading">
                                 <div> <img src={require('../Assets/menu.png')} id="docIcon" /></div>
-                                <div id="page-heading">Students listing</div>
+                                <div id="page-heading">Queries listing</div>
                             </div>
 
                             <div id="showing-pagination">
@@ -49,9 +49,20 @@ class StudentRecords extends Component {
                         </div>
 
                         <div className="export-buttons">
-                            <div id="btns">
+                            <div id="queries-btns">
 
                                 <div>
+                                <Tooltip title="Show all data">
+                                        <button id="all-btn"
+
+                                            className="btn">
+                                            <span >
+                                                <img src={require('../Assets/increase-size-option.png')}
+                                                    id="all-img" />
+                                            </span>
+                                            All
+                                        </button>
+                                    </Tooltip>
                                     <Tooltip title="Show all data">
                                         <button id="all-btn"
 
@@ -80,7 +91,7 @@ class StudentRecords extends Component {
                         </div>
 
                         <div>
-                            <StudentTable />
+                            <QueriesTable />
                         </div>
 
                     </div>
@@ -92,4 +103,4 @@ class StudentRecords extends Component {
     }
 }
 
-export default StudentRecords
+export default Queries

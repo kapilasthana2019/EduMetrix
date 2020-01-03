@@ -117,6 +117,26 @@ class DrawerList extends Component {
         this.props.props.props.history.push('/Dashboard/studentManage')
     }
 
+    studentRequest = (event)=>{
+        
+        this.props.props.props.history.push('/Dashboard/studentRequest')
+    }
+
+    suspended = (event)=>{
+
+        this.props.props.props.history.push('/Dashboard/suspended')
+    }
+
+    paymentRequest = (event)=>{
+        this.props.props.props.history.push('/Dashboard/paymentRequest')
+
+    }
+
+    queries = (event)=>{
+        this.props.props.props.history.push('/Dashboard/queries')
+    }
+
+
     render() {
         return (
 
@@ -163,7 +183,9 @@ class DrawerList extends Component {
 
                                         {/* item 2 */}
 
-                                        <ListItem button className={""}>
+                                        <ListItem button className={""}
+                                        onClick = {event=>this.studentRequest(event)}
+                                        >
                                             <ListItemIcon>
 
                                             </ListItemIcon>
@@ -171,7 +193,9 @@ class DrawerList extends Component {
                                         </ListItem>
                                         {/* item 1 */}
 
-                                        <ListItem button className={""}>
+                                        <ListItem button className={""}
+                                        onClick = {event=>this.suspended(event)}
+                                        >
                                             <ListItemIcon>
 
                                             </ListItemIcon>
@@ -179,7 +203,9 @@ class DrawerList extends Component {
                                         </ListItem>
                                         {/* item 1 */}
 
-                                        <ListItem button className={""}>
+                                        <ListItem button className={""}
+                                        onClick ={event=>this.paymentRequest(event)}
+                                        >
                                             <ListItemIcon>
 
                                             </ListItemIcon>
@@ -193,6 +219,14 @@ class DrawerList extends Component {
                                             </ListItemIcon>
                                             <ListItemText primary="Social Post Report" />
                                         </ListItem>
+                                        {/* item 1 */}
+
+                                        <ListItem button className={""}>
+                                            <ListItemIcon>
+
+                                            </ListItemIcon>
+                                            <ListItemText primary="Post" />
+                                        </ListItem>
                                     </List>
                                 </Collapse>
                                
@@ -200,7 +234,7 @@ class DrawerList extends Component {
                                 {/* item 2 in shown in list ========================================*/}
                                 <Divider style={{ backgroundColor: "gray" }} />
 
-                                <ListItem button>
+                                <ListItem button onClick = {event=>this.queries(event)}>
 
                                     <ListItemIcon >
 
@@ -216,13 +250,7 @@ class DrawerList extends Component {
                                     <ListItemText primary="Admin Message" />
                                 </ListItem>
 
-                                <ListItem button>
-
-                                    <ListItemIcon >
-
-                                    </ListItemIcon>
-                                    <ListItemText primary="Post List" />
-                                </ListItem>
+                                
 
                         </List>
                         </MuiThemeProvider>

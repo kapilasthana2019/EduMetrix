@@ -43,14 +43,16 @@
     border-bottom:1px solid rgb(214, 212, 212);
 }
 .content-part{
-    margin-top: 15px;
-    
-   /* background-color: #d2d6de; */
-   
+    margin-top: 15px; 
    font-size: 18px;
+   font-family: "Roboto", sans-serif;
    border: 1px solid rgb(214, 212, 212);
- 
+}
 
+.payment-content-part{
+    margin-top: 15px; 
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
 }
 
 #inner-sub-heading{
@@ -64,6 +66,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 16px;
+    font-family: "Roboto", sans-serif;
 }
 
 #docIcon{
@@ -75,6 +78,7 @@
 #showing-pagination{
     font-size: 14px;
     margin-top: 5px;
+    font-family: "Roboto", sans-serif;
 }
 
 .export-buttons{
@@ -95,10 +99,19 @@
     margin: 10px 10px 10px 10px;
 }
 
+#queries-btns{
+   display: flex;
+    position: relative;
+    width: 17%;
+    margin: 10px 10px 10px 10px;
+}
+
 #all-btn{
-    font-size: 12px;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
     border: 1px solid gray;
     background-color: rgb(231, 227, 227);
+    width: 55px;
 }
 #all-img{
     margin-right: 4px;
@@ -113,4 +126,6 @@
 .editButton{
    border: none;
    background-color: transparent;
+
 }
+

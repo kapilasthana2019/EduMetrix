@@ -3,20 +3,15 @@ import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 import '../CssFiles/StudentRecord.css'
 import Tooltip from '@material-ui/core/Tooltip';
-import ManageEditPopup from './ManageEditPopup'
+import TextField from '@material-ui/core/TextField';
 
+class SuspendedTable extends Component {
 
-class StudentTable extends Component {
-
-    
     constructor(props) {
-       
         super(props)
 
         this.state = {
-            posts: [],
-            editPopup:true,
-            editRowData:""
+            posts: []
         }
     }
 
@@ -32,32 +27,12 @@ class StudentTable extends Component {
                 posts: posts
             })
 
-
         })
     }
 
     columnClicked = (id) => {
         console.log("column click",id);
     }
-
-
-    setEditOpen = ()=>{
-       
-        this.setState({
-            editPopup: !this.state.editPopup
-        }) 
-    }
-
-    editButton =(event,props)=>{
-        // console.log("event",props.original);
-        this.setEditOpen()
-
-        this.setState({
-            editRowData:props.original
-        })
-
-    }
-
     render() {
 
         const columns = [
@@ -66,9 +41,8 @@ class StudentTable extends Component {
                 headerStyle: {
                   
                     borderRight:"1px solid lightGray",
-                    padding: '15px',
-                    height:40,
-                    backgroundColor:"white",
+                    padding: '10px',
+                    backgroundColor:"rgb(241, 244, 245)",
                     },
                 Header: "#",
                 accessor: "userId",
@@ -91,28 +65,18 @@ class StudentTable extends Component {
                     fontWeight:"bold",
                     fontSize:"14px",
                     padding:"10px",
-                    backgroundColor:"white",
+                    backgroundColor:"rgb(241, 244, 245)",
                     whiteSpace:"unset"
                     },
-                Header: "First Name",
+                Header: "Student Name",
                 accessor: "id",
-
                 style: {
                     borderRight:"1px solid lightGray",
-                    color: "#3c8dbc",
                     fontSize: "16px",
                     cursor: "pointer",
-                    
                 },
-                Cell: props=>{
 
-                    return(
-                        <div onClick ={()=>{
-                            console.log("props original",props.original);
-                           this.columnClicked(props.row._index) 
-                }}>{props.value}</div>
-                    )
-                }
+                width: 350,
             },
             {
 
@@ -123,10 +87,10 @@ class StudentTable extends Component {
                     fontWeight:"bold",
                     fontSize:"14px",
                     padding:"10px",
-                    backgroundColor:"white",
+                    backgroundColor:"rgb(241, 244, 245)",
                     whiteSpace:"unset"
                     },
-                Header: "Last Name",
+                Header: "Payable Amount",
                 accessor: "title",
 
                 style: {
@@ -137,6 +101,7 @@ class StudentTable extends Component {
                     whiteSpace:"unset"
 
                 },
+                width: 80,
                 sortable: false,
                
             },
@@ -148,11 +113,11 @@ class StudentTable extends Component {
                     fontWeight:"bold",
                     fontSize:"14px",
                     padding:"10px",
-                    backgroundColor:"white",
+                    backgroundColor:"rgb(241, 244, 245)",
                     whiteSpace:"unset"
                     },
 
-                Header: "Phone",
+                Header: "Status",
                 accessor: "body",
                 style: {
                     borderRight:"1px solid lightGray",
@@ -162,7 +127,7 @@ class StudentTable extends Component {
                     whiteSpace:"unset"
                 },
                 sortable: false,
-                width:170
+                width: 80,
             },
             {
                 headerStyle: {
@@ -172,10 +137,10 @@ class StudentTable extends Component {
                     fontWeight:"bold",
                     fontSize:"14px",
                     padding:"10px",
-                    backgroundColor:"white",
+                    backgroundColor:"rgb(241, 244, 245)",
                     whiteSpace:"unset"
                     },
-                Header: "Email",
+                Header: "Added Date",
                 accessor: "email",
                 style: {
                     borderRight:"1px solid lightGray",
@@ -185,7 +150,7 @@ class StudentTable extends Component {
                     whiteSpace:"unset"
 
                 },
-                width:180
+                minWidth:160
             },
             {
                 headerStyle: {
@@ -195,10 +160,10 @@ class StudentTable extends Component {
                     fontWeight:"bold",
                     fontSize:"14px",
                     padding:"10px",
-                    backgroundColor:"white",
+                    backgroundColor:"rgb(241, 244, 245)",
                     whiteSpace:"unset"
                     },
-                Header: "Login Bonus",
+                Header: "Paid Date",
                 accessor: "bonus",
                 style: {
                     borderRight:"1px solid lightGray",
@@ -207,19 +172,21 @@ class StudentTable extends Component {
                     fontSize: "14px",
                     whiteSpace:"unset"
                 },
+                minWidth:100
             },
             {
                 headerStyle: {
                     borderBottom:"1px solid lightGray",
                     borderRight:"1px solid lightGray",
-                    color:"black",
+                    color:"#3c8dbc",
                     fontWeight:"bold",
                     fontSize:"14px",
                     padding:"10px",
-                    backgroundColor:"white",
+                    backgroundColor:"rgb(241, 244, 245)",
                     whiteSpace:"unset"
                     },
-                Header: "Referrer Name",
+
+                Header: "Lifetime",
                 accessor: "ReferName",
                 filterable: false,
                 style: {
@@ -229,6 +196,7 @@ class StudentTable extends Component {
                     fontSize: "14px",
                     whiteSpace:"unset"
                 },
+                minWidth:100
             },
             {
                 headerStyle: {
@@ -238,14 +206,14 @@ class StudentTable extends Component {
                     fontWeight:"bold",
                     fontSize:"14px",
                     padding:"10px",
-                    backgroundColor:"white",
+                    backgroundColor:"rgb(241, 244, 245)",
                     },
                 Header: "Actions",
                 Cell: props => {
                     return (
                         <div>
                             <Tooltip title = "edit">
-                            <button className="editButton" onClick ={event=>this.editButton(event,props)}>
+                            <button className="editButton">
                                 <img src ={require('../Assets/pencil.png')} id="docIcon"/>
                             </button>
                             </Tooltip>
@@ -269,13 +237,11 @@ class StudentTable extends Component {
         ]
         return (
             <div style={{padding:"5px"}}>
-            <ReactTable
+            <ReactTable style={{borderRight:"none",borderLeft:"none"}}
                 columns={columns}
                 noDataText={"please wait..."}
                 data={this.state.posts}
-                filterable
-                defaultPageSize={10}
-                
+                defaultPageSize={1}   
                 // className="highlight"
                 getTrProps={(state, rowInfo, column) => {
 
@@ -283,22 +249,22 @@ class StudentTable extends Component {
                         return {
 
                             style: {
-                                background: (rowInfo.row.id) % 2 ? 'white' : 'light',                                
+                                background: (rowInfo.row.id) % 2 ? 'white' : 'light',
+                                
                             }
                         }
                     }
                     return {};
-                }}
-            >
-            </ReactTable>
 
-            {(this.state.editPopup) ? <ManageEditPopup
-            open ={this.state.editPopup}
-            refreshEdit={this.setEditOpen}
-            data ={this.state.editRowData}/>:""}
+
+                }}
+
+            >
+
+            </ReactTable>
             </div>
         )
     }
 }
 
-export default StudentTable
+export default SuspendedTable

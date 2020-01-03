@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import '../CssFiles/StudentRecord.css'
 import Tooltip from '@material-ui/core/Tooltip';
-import StudentTable from './StudentTable'
+import SuspendedTable from './SuspendedTable'
 
 
-
-class StudentRecords extends Component {
+class Suspended extends Component {
 
     constructor(props) {
         super(props)
@@ -44,7 +43,7 @@ class StudentRecords extends Component {
                             </div>
 
                             <div id="showing-pagination">
-                                Showing 1-20 of 2,745 items.
+                            Showing 1-1 of 1 item
                          </div>
                         </div>
 
@@ -80,7 +79,8 @@ class StudentRecords extends Component {
                         </div>
 
                         <div>
-                            <StudentTable />
+                            
+                            <SuspendedTable/>
                         </div>
 
                     </div>
@@ -92,4 +92,4 @@ class StudentRecords extends Component {
     }
 }
 
-export default StudentRecords
+export default Suspended

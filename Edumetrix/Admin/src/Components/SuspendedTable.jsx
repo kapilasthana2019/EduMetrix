@@ -3,22 +3,18 @@ import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 import '../CssFiles/StudentRecord.css'
 import Tooltip from '@material-ui/core/Tooltip';
-import ManageEditPopup from './ManageEditPopup'
 
 
-class StudentTable extends Component {
+class SuspendedTable extends Component {
 
-    
     constructor(props) {
-       
         super(props)
 
         this.state = {
-            posts: [],
-            editPopup:true,
-            editRowData:""
+            posts: []
         }
     }
+
 
     componentDidMount() {
 
@@ -32,32 +28,12 @@ class StudentTable extends Component {
                 posts: posts
             })
 
-
         })
     }
 
     columnClicked = (id) => {
         console.log("column click",id);
     }
-
-
-    setEditOpen = ()=>{
-       
-        this.setState({
-            editPopup: !this.state.editPopup
-        }) 
-    }
-
-    editButton =(event,props)=>{
-        // console.log("event",props.original);
-        this.setEditOpen()
-
-        this.setState({
-            editRowData:props.original
-        })
-
-    }
-
     render() {
 
         const columns = [
@@ -207,6 +183,7 @@ class StudentTable extends Component {
                     fontSize: "14px",
                     whiteSpace:"unset"
                 },
+                minWidth:100
             },
             {
                 headerStyle: {
@@ -229,6 +206,7 @@ class StudentTable extends Component {
                     fontSize: "14px",
                     whiteSpace:"unset"
                 },
+                minWidth:100
             },
             {
                 headerStyle: {
@@ -245,7 +223,7 @@ class StudentTable extends Component {
                     return (
                         <div>
                             <Tooltip title = "edit">
-                            <button className="editButton" onClick ={event=>this.editButton(event,props)}>
+                            <button className="editButton">
                                 <img src ={require('../Assets/pencil.png')} id="docIcon"/>
                             </button>
                             </Tooltip>
@@ -283,22 +261,22 @@ class StudentTable extends Component {
                         return {
 
                             style: {
-                                background: (rowInfo.row.id) % 2 ? 'white' : 'light',                                
+                                background: (rowInfo.row.id) % 2 ? 'white' : 'light',
+                                
                             }
                         }
                     }
                     return {};
-                }}
-            >
-            </ReactTable>
 
-            {(this.state.editPopup) ? <ManageEditPopup
-            open ={this.state.editPopup}
-            refreshEdit={this.setEditOpen}
-            data ={this.state.editRowData}/>:""}
+
+                }}
+
+            >
+
+            </ReactTable>
             </div>
         )
     }
 }
 
-export default StudentTable
+export default SuspendedTable
