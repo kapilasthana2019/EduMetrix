@@ -136,6 +136,13 @@ class DrawerList extends Component {
         this.props.props.props.history.push('/Dashboard/queries')
     }
 
+    PostPage = (event)=>{
+        this.props.props.props.history.push('/Dashboard/PostPage')
+    }
+
+    AdminMessage = (event)=>{
+        this.props.props.props.history.push('/Dashboard/AdminMessage')
+    }
 
     render() {
         return (
@@ -221,7 +228,9 @@ class DrawerList extends Component {
                                         </ListItem>
                                         {/* item 1 */}
 
-                                        <ListItem button className={""}>
+                                        <ListItem button 
+                                         onClick = {event=>this.PostPage(event)}
+                                        className={""}>
                                             <ListItemIcon>
 
                                             </ListItemIcon>
@@ -242,7 +251,8 @@ class DrawerList extends Component {
                                     <ListItemText primary="Queries" />
                                 </ListItem>
 
-                                <ListItem button>
+                                <ListItem button 
+                                onClick = {event=>this.AdminMessage(event)}>
 
                                     <ListItemIcon >
 

@@ -24,3 +24,21 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+#ans-input{
+    border: 1px solid rgb(212, 209, 209);
+}
+#ans-text{
+    margin-left: 10px;
+    font-size: 14px;
+  line-height: 1;
+}
+#drop-down{
+    background-color: white;
+    margin-top: 10px;
+    border:1px solid rgb(212, 209, 209);
+    height: 29px;
+     min-width: 50%;
+    width: 100%;
+     /* background-color: red; */
+ }

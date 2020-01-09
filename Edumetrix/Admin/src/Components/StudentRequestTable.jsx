@@ -298,9 +298,7 @@ class StudentRequestTable extends Component {
 
 
                 }}
-
             >
-
             </ReactTable>
             </div>
         )

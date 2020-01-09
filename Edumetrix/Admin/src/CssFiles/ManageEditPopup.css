@@ -217,3 +217,131 @@ tr:nth-child(odd) {
        flex-direction: row;
        justify-content: space-between;
    }
+   #bonus-field{
+
+    /* background-color: red; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+    /* background-color: yellowgreen; */
+    justify-content: space-between;
+   }
+   .image-verification{
+       display: flex;
+       flex-direction: row;
+      
+   }
+   .id-front-verify{
+    display: flex;
+    flex-direction: row;
+   }
+   #image-part{
+       width: 30%;
+   }
+
+   #front-pic{
+       width: 75%;
+     
+   }
+#front-verified-checkbox{
+    width: 25%;
+
+}
+#front-verify-msg{
+    margin-top: 5px;
+    margin-left: 15px;
+    font-family: "Roboto", sans-serif;
+    color: darkgreen;
+ }
+ #front-notverify-msg{
+     margin-top: 5px;
+     margin-left: 10px;
+     font-family: "Roboto", sans-serif;
+     color: darkred;
+ }
+ #bonus-input{
+    margin-top: 10px;
+    width: 30px;
+    border: 1px solid rgb(212, 209, 209);
+    background-color: white;
+ }
+
+ #text{
+ 
+    text-align: center;
+ }
+
+ #add-btn-div{
+background-color: red;
+ }
+
+ #add-btn{
+     margin-top: 5px;
+     width: 30px;
+     margin-left: -40px;
+     height: 30px;
+     font-family: "Roboto", sans-serif;
+     font-size: 15px;
+ }
+
+ .chat-history-div{
+
+    display: flex;
+    flex-direction: row;
+ }
+ #history-msg{
+     margin-left: 20px;
+     margin-top: 5px;
+     font-family: "Roboto", sans-serif;
+     text-align: center;
+     font-size: 13px;
+     color: darkred;
+ }
+
+ .password-field-container{
+
+    width: 600px;
+    /* background-color: red; */
+   
+    
+ }
+
+ .header-part{
+     display: flex;
+     flex-direction: row;
+     padding: 15px 15px 0px 15px;
+     justify-content: space-between;
+ }
+ #header-title{
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+ }
+ #btn-close{
+     margin-right: 10px;
+ }
+ .password-field{
+    padding: 0px 15px 15px 15px;
+ }
+ #title{
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 13px; 
+ }
+ #password-input{
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid rgb(212, 209, 209);
+    background-color: white;
+ }
+
+ #password-submitBtn{
+     display: flex;
+     flex-direction: row;
+     padding-top: 10px;
+     justify-content: flex-end;
+ }
+ #submit-btn{
+     font-weight: bold;
+ }

@@ -6,18 +6,19 @@ import Tooltip from '@material-ui/core/Tooltip';
 import ManageEditPopup from './ManageEditPopup'
 
 
-class SuspendedTable extends Component {
+class AdminMessageTable extends Component {
 
+    
     constructor(props) {
+       
         super(props)
 
         this.state = {
             posts: [],
-            viewstatus : false,
-            rowData :""
+            editPopup:false,
+            editRowData:""
         }
     }
-
 
     componentDidMount() {
 
@@ -31,6 +32,7 @@ class SuspendedTable extends Component {
                 posts: posts
             })
 
+
         })
     }
 
@@ -38,20 +40,25 @@ class SuspendedTable extends Component {
         console.log("column click",id);
     }
 
-    setViewState = ()=>{
+
+    setEditOpen = ()=>{
        
         this.setState({
-            viewstatus : !this.state.viewstatus
+            editPopup: !this.state.editPopup
         })
-
+        
+        console.log("edit button");
+        
     }
-    ViewClickHandle = (props,event)=>{
-       
-        this.setViewState()
+
+    editButton =(event,props)=>{
+        // console.log("event",props.original);
+        this.setEditOpen()
 
         this.setState({
-            rowData : props.original
+            editRowData:props.original
         })
+
     }
 
     render() {
@@ -90,25 +97,15 @@ class SuspendedTable extends Component {
                     backgroundColor:"white",
                     whiteSpace:"unset"
                     },
-                Header: "First Name",
+                Header: "Admin Message",
                 accessor: "id",
-
                 style: {
                     borderRight:"1px solid lightGray",
-                    color: "#3c8dbc",
-                    fontSize: "16px",
-                    cursor: "pointer",
                     
+                    fontSize: "16px",
+                     
                 },
-                Cell: props=>{
-
-                    return(
-                        <div onClick ={()=>{
-                            console.log("props original",props.original);
-                           this.columnClicked(props.row._index) 
-                }}>{props.value}</div>
-                    )
-                }
+                width: 550,
             },
             {
 
@@ -122,7 +119,7 @@ class SuspendedTable extends Component {
                     backgroundColor:"white",
                     whiteSpace:"unset"
                     },
-                Header: "Last Name",
+                Header: "Created At",
                 accessor: "title",
 
                 style: {
@@ -131,102 +128,9 @@ class SuspendedTable extends Component {
                     textAlign: "left",
                     fontSize: "14px",
                     whiteSpace:"unset"
-
                 },
-                sortable: false,
-               
-            },
-            {
-                headerStyle: {
-                    borderBottom:"1px solid lightGray",
-                    borderRight:"1px solid lightGray",
-                    color:"#3c8dbc",
-                    fontWeight:"bold",
-                    fontSize:"14px",
-                    padding:"10px",
-                    backgroundColor:"white",
-                    whiteSpace:"unset"
-                    },
-
-                Header: "Phone",
-                accessor: "body",
-                style: {
-                    borderRight:"1px solid lightGray",
-                    color: "black",
-                    textAlign: "left",
-                    fontSize: "14px",
-                    whiteSpace:"unset"
-                },
-                sortable: false,
-                width:170
-            },
-            {
-                headerStyle: {
-                    borderBottom:"1px solid lightGray",
-                    borderRight:"1px solid lightGray",
-                    color:"#3c8dbc",
-                    fontWeight:"bold",
-                    fontSize:"14px",
-                    padding:"10px",
-                    backgroundColor:"white",
-                    whiteSpace:"unset"
-                    },
-                Header: "Email",
-                accessor: "email",
-                style: {
-                    borderRight:"1px solid lightGray",
-                    color: "black",
-                    textAlign: "left",
-                    fontSize: "14px",
-                    whiteSpace:"unset"
-
-                },
-                width:180
-            },
-            {
-                headerStyle: {
-                    borderBottom:"1px solid lightGray",
-                    borderRight:"1px solid lightGray",
-                    color:"#3c8dbc",
-                    fontWeight:"bold",
-                    fontSize:"14px",
-                    padding:"10px",
-                    backgroundColor:"white",
-                    whiteSpace:"unset"
-                    },
-                Header: "Login Bonus",
-                accessor: "bonus",
-                style: {
-                    borderRight:"1px solid lightGray",
-                    color: "black",
-                    textAlign: "left",
-                    fontSize: "14px",
-                    whiteSpace:"unset"
-                },
-                minWidth:100
-            },
-            {
-                headerStyle: {
-                    borderBottom:"1px solid lightGray",
-                    borderRight:"1px solid lightGray",
-                    color:"black",
-                    fontWeight:"bold",
-                    fontSize:"14px",
-                    padding:"10px",
-                    backgroundColor:"white",
-                    whiteSpace:"unset"
-                    },
-                Header: "Referrer Name",
-                accessor: "ReferName",
-                filterable: false,
-                style: {
-                    borderRight:"1px solid lightGray",
-                    color: "black",
-                    textAlign: "left",
-                    fontSize: "14px",
-                    whiteSpace:"unset"
-                },
-                minWidth:100
+                width: 350,
+                sortable: false,  
             },
             {
                 headerStyle: {
@@ -242,11 +146,13 @@ class SuspendedTable extends Component {
                 Cell: props => {
                     return (
                         <div>
-                            <Tooltip title = "edit">
-                            <button 
-                            onClick = {event=> this.ViewClickHandle(props,event)}
-
-                            className="editButton">
+                            <Tooltip title = "View">
+                            <button className="editButton" onClick ={event=>this.editButton(event,props)}>
+                                <img src ={require('../Assets/eye.png')} id="docIcon"/>
+                            </button>
+                            </Tooltip>
+                            <Tooltip title = "Update">
+                            <button className="editButton" onClick ={event=>this.editButton(event,props)}>
                                 <img src ={require('../Assets/pencil.png')} id="docIcon"/>
                             </button>
                             </Tooltip>
@@ -284,8 +190,7 @@ class SuspendedTable extends Component {
                         return {
 
                             style: {
-                                background: (rowInfo.row.id) % 2 ? 'white' : 'light',
-                                
+                                background: (rowInfo.row.id) % 2 ? 'white' : 'light',                                
                             }
                         }
                     }
@@ -294,14 +199,14 @@ class SuspendedTable extends Component {
             >
             </ReactTable>
 
-            {(this.state.viewstatus) ? <ManageEditPopup
+            {(this.state.editPopup) ? <ManageEditPopup
             props = {this.props}
-            open ={this.state.viewstatus}
-            refreshEdit={this.setViewState}
-            data ={this.state.rowData}/>:""}
+            open ={this.state.editPopup}
+            refreshEdit={this.setEditOpen}
+            data ={this.state.editRowData}/>:""}
             </div>
         )
     }
 }
 
-export default SuspendedTable
+export default AdminMessageTable

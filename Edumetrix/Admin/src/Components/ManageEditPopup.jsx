@@ -56,18 +56,14 @@ class ManageEditPopup extends Component {
 
                         <div className="data-container-show">
 
-                            <button className="btn btn-primary">
-                                Update
-                               </button>
-
-                            <ManageEditTable />
+                            <ManageEditTable props = {this.props}/>
 
                             <div className="Referer-title">
                                 <li>Referer Details</li>
                             </div>
                             <div>
 
-                                <RefererTable />
+                                <RefererTable props = {this.props}/>
                             </div>
 
                             <div className="Earning-title">
@@ -110,7 +106,7 @@ class ManageEditPopup extends Component {
                                 <div>
                                     <button  
                                      className="btn btn-primary">
-                                        Edit
+                                        Verify
                                </button>
 
                                 </div>

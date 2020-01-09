@@ -30,7 +30,7 @@ class Suspended extends Component {
                 <div className="content-header">
 
                     <div id="heading">
-                        Students
+                        Suspend
                      </div>
 
                     <div className="content-part">

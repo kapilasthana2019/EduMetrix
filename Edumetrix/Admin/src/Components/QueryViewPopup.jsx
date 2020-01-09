@@ -68,15 +68,10 @@ class QueryViewPopup extends Component {
                         open={this.state.open}
                         onClose={event => this.handleClose(event)}
                     >
-                        {(this.props.value === "view") ?
-                            <ViewQueryPopup
+                        <ViewQueryPopup
                                 data={this.props.data}
                                 close = {this.handleClose}
-                            /> :
-                            <UpdateQeryPopup
-                                data={this.props.data}
-                                close = {this.handleClose}
-                            />}
+                            />
 
 
                     </Dialog>

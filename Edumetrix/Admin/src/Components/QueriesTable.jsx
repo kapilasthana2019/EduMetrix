@@ -265,13 +265,13 @@ class QueriesTable extends Component {
                             </button>
                             </Tooltip>
 
-                            <Tooltip title = "Update">
+                            {/* <Tooltip title = "Update">
                             <button
                             onClick = {event=>this.handleUpdate(event,props)}
                             className="editButton">
                                 <img src ={require('../Assets/pencil.png')} id="docIcon"/>
                             </button>
-                            </Tooltip>
+                            </Tooltip> */}
 
                             <Tooltip title = "Delete">
                             <button

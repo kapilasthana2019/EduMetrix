@@ -33,6 +33,15 @@ class SuspendedTable extends Component {
     columnClicked = (id) => {
         console.log("column click",id);
     }
+
+    paymentUpdateHandle = (event,props)=>{
+
+       
+        
+    }
+
+
+
     render() {
 
         const columns = [
@@ -73,7 +82,7 @@ class SuspendedTable extends Component {
                 style: {
                     borderRight:"1px solid lightGray",
                     fontSize: "16px",
-                    cursor: "pointer",
+                  
                 },
 
                 width: 350,
@@ -188,7 +197,7 @@ class SuspendedTable extends Component {
 
                 Header: "Lifetime",
                 accessor: "ReferName",
-                filterable: false,
+                
                 style: {
                     borderRight:"1px solid lightGray",
                     color: "black",
@@ -213,7 +222,10 @@ class SuspendedTable extends Component {
                     return (
                         <div>
                             <Tooltip title = "edit">
-                            <button className="editButton">
+                            <button 
+                            onClick = {event=>this.paymentUpdateHandle(event,props)}
+
+                            className="editButton">
                                 <img src ={require('../Assets/pencil.png')} id="docIcon"/>
                             </button>
                             </Tooltip>
@@ -241,6 +253,7 @@ class SuspendedTable extends Component {
                 columns={columns}
                 noDataText={"please wait..."}
                 data={this.state.posts}
+                filterable = {true}
                 defaultPageSize={1}   
                 // className="highlight"
                 getTrProps={(state, rowInfo, column) => {

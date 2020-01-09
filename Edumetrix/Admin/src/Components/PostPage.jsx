@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import '../CssFiles/StudentRecord.css'
 import Tooltip from '@material-ui/core/Tooltip';
-import PaymentRequestTable from './PaymentRequestTable'
+import PostPageTable from './PostPageTable'
 
 
-class PaymentRequest extends Component {
+
+class PostPage extends Component {
 
     constructor(props) {
         super(props)
@@ -22,7 +23,6 @@ class PaymentRequest extends Component {
 
     render() {
 
-        console.log("menutoggle", this.state.toggle);
 
         return (
             <div className="main-container">
@@ -30,12 +30,20 @@ class PaymentRequest extends Component {
                 <div className="content-header">
 
                     <div id="heading">
-                        Payment Request
+                        Post Page
                      </div>
 
-                    <div className="payment-content-part">
+                    <div className="content-part">
+
+                        <div id="sub-heading">
+
+                            <div id="showing-pagination">
+                                Showing 1-20 of 2,745 items.
+                         </div>
+                        </div>
+
                         <div>
-                            <PaymentRequestTable props = {this.props}/>
+                            <PostPageTable props = {this.props}/>
                         </div>
 
                     </div>
@@ -47,4 +55,4 @@ class PaymentRequest extends Component {
     }
 }
 
-export default PaymentRequest
+export default PostPage

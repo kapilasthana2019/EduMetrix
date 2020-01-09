@@ -47,8 +47,6 @@ class StudentTable extends Component {
             editPopup: !this.state.editPopup
         })
         
-        console.log("edit button");
-        
     }
 
     editButton =(event,props)=>{
@@ -296,6 +294,7 @@ class StudentTable extends Component {
             </ReactTable>
 
             {(this.state.editPopup) ? <ManageEditPopup
+            props = {this.props}
             open ={this.state.editPopup}
             refreshEdit={this.setEditOpen}
             data ={this.state.editRowData}/>:""}

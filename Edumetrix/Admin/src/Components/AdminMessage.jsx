@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import '../CssFiles/StudentRecord.css'
 import Tooltip from '@material-ui/core/Tooltip';
-import StudentTable from './StudentTable'
+import AdminMessageTable from './AdminMessageTable'
 
 
 
-class StudentRecords extends Component {
+class AdminMessage extends Component {
 
     constructor(props) {
         super(props)
@@ -23,7 +23,7 @@ class StudentRecords extends Component {
 
     render() {
 
-        console.log("menutoggle", this.state.toggle);
+
 
         return (
             <div className="main-container">
@@ -31,7 +31,7 @@ class StudentRecords extends Component {
                 <div className="content-header">
 
                     <div id="heading">
-                        Manage
+                        Admin Message
                      </div>
 
                     <div className="content-part">
@@ -40,7 +40,7 @@ class StudentRecords extends Component {
 
                             <div id="inner-sub-heading">
                                 <div> <img src={require('../Assets/menu.png')} id="docIcon" /></div>
-                                <div id="page-heading">Students listing</div>
+                                <div id="page-heading">Message</div>
                             </div>
 
                             <div id="showing-pagination">
@@ -80,7 +80,7 @@ class StudentRecords extends Component {
                         </div>
 
                         <div>
-                            <StudentTable props = {this.props}/>
+                            <AdminMessageTable props = {this.props}/>
                         </div>
 
                     </div>
@@ -92,4 +92,4 @@ class StudentRecords extends Component {
     }
 }
 
-export default StudentRecords
+export default AdminMessage

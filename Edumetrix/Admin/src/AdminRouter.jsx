@@ -6,6 +6,9 @@ import studentRequest from './Components/StudentRequest'
 import suspended from './Components/Suspended'
 import paymentRequest from './Components/PaymentRequest'
 import queries from './Components/Queries'
+import chatHistory from './Components/ChatHistory'
+import postPage from './Components/PostPage'
+import adminMessage from './Components/AdminMessage'
 
 const AdminRouter = () => (
 
@@ -21,7 +24,9 @@ const AdminRouter = () => (
             <Route path = "/Dashboard/suspended" component = {suspended} />
             <Route path = "/Dashboard/paymentRequest" component = {paymentRequest}/>
            <Route path ="/Dashboard/queries" component = {queries}/>
-           
+           <Route path ="/Dashboard/chatHistory" component = {chatHistory}/>
+           <Route path = "/Dashboard/PostPage" component = {postPage}/>
+           <Route path = "/Dashboard/AdminMessage" component = {adminMessage}/>
             </switch>
 
         </div>

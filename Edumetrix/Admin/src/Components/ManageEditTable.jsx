@@ -14,8 +14,8 @@ class ManageEditTable extends Component {
 
         this.state = {
             Email: "kapilasthana2008@gmail.com",
-            EmailCheck: false,
-            phoneNoCheck: false
+            photoVerify: false,
+            frontPhotoVerify:false
         }
 
         this.mail_to = "mailto:" + this.state.Email
@@ -27,22 +27,19 @@ class ManageEditTable extends Component {
 
     }
 
-    PhoneNumberCheck = () => {
 
-        console.log(" phone check button clicked");
+    PhotoVerify = () => {
 
         this.setState({
-            phoneNoCheck: !this.state.phoneNoCheck
+            photoVerify: !this.state.photoVerify
         })
 
     }
 
-    EmailhandleCheck = () => {
-
+    frontPhotoVerify = ()=>{
         this.setState({
-            EmailCheck: !this.state.EmailCheck
+            frontPhotoVerify: !this.state.frontPhotoVerify
         })
-
     }
 
     render() {
@@ -73,14 +70,7 @@ class ManageEditTable extends Component {
                                 <td>6388064276</td>
 
                                 <div id="verified-checkbox">
-                                    <Checkbox
 
-                                        onChange={event => this.PhoneNumberCheck(event)}
-                                        color="default"
-                                        value="default"
-                                        checked={this.state.phoneNoCheck}
-                                        inputProps={{ 'aria-label': 'checkbox with default color' }}
-                                    />
                                     <div>
                                         {
                                             (this.state.phoneNoCheck) ?
@@ -103,14 +93,7 @@ class ManageEditTable extends Component {
                             <div id="check">
                                 <td><a href={this.mail_to}>{this.state.Email}</a></td>
                                 <div id="verified-checkbox">
-                                    <Checkbox
 
-                                        onChange={event => this.EmailhandleCheck(event)}
-                                        color="default"
-                                        value="default"
-                                        checked={this.state.EmailCheck}
-                                        inputProps={{ 'aria-label': 'checkbox with default color' }}
-                                    />
                                     <div>
                                         {
                                             (this.state.EmailCheck) ?
@@ -138,14 +121,72 @@ class ManageEditTable extends Component {
                         <tr>
                             <th>Photo</th>
                             <td>
-                                <img src={require("../Assets/kapil.jpg")} id="user-photo" />
+                                <div className="image-verification">
+                                    <div id="image-part">
+                                        <img src={require("../Assets/kapil.jpg")}
+                                            id="user-photo" />
+                                    </div>
+
+                                    <div id="verified-checkbox">
+                                        <Checkbox
+
+                                            onChange={event => this.PhotoVerify(event)}
+                                            color="default"
+                                            value="default"
+                                            checked={this.state.photoVerify}
+                                            inputProps={{ 'aria-label': 'checkbox with default color' }}
+                                        />
+                                        <div>
+                                            {
+                                                (this.state.photoVerify) ?
+                                                    <div id="verify-msg">
+                                                        verified
+                                            </div> :
+                                                    <div id="notverify-msg">
+                                                        not verified
+                                             </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
 
                         <tr>
                             <th>Student id front</th>
                             <td>
-                                <img src={require("../Assets/kapil.jpg")} id="front-photo" />
+                                <div className="id-front-verify">
+                                    <div id = "front-pic">
+                                        <img src={require("../Assets/kapil.jpg")}
+                                            id="front-photo" />
+                                    </div>
+                                    <div id="front-verified-checkbox">
+                                        <div style = {{marginLeft:"20px",marginTop:"150px"}}>
+                                        <Checkbox
+
+                                            onChange={event => this.frontPhotoVerify(event)}
+                                            color="default"
+                                            value="default"
+                                            checked={this.state.frontPhotoVerify}
+                                            inputProps={{ 'aria-label': 'checkbox with default color' }}
+                                        />
+                                        </div>
+                                        <div>
+                                            {
+                                                (this.state.frontPhotoVerify) ?
+                                                    <div id="front-verify-msg">
+                                                        verified
+                                            </div> :
+                                                    <div id="front-notverify-msg">
+                                                        not verified
+                                             </div>
+                                            }
+                                        </div>
+                                    </div>
+ 
+
+                                </div>
+
                             </td>
                         </tr>
 

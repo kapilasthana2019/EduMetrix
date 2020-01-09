@@ -30,7 +30,7 @@ class StudentRecords extends Component {
                 <div className="content-header">
 
                     <div id="heading">
-                        Students
+                        Student Request
                      </div>
 
                     <div className="content-part">
