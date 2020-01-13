@@ -126,6 +126,49 @@
 .editButton{
    border: none;
    background-color: transparent;
+}
 
+.link-container{
+    display: flex;
+    flex-direction: row;
+}
+
+#link-url{
+    width: 80%;
+    margin-left: 10px;
+    border: 1px solid rgb(212, 209, 209);
+    background-color: white;
+}
+
+#paste-heading{
+
+    font-weight: bold;
+    font-style: italic;
+}
+
+#url{
+   margin-left: 10px;
+   font-size: 15px;
+}
+
+#upload-button{
+
+    margin-top: 20px;
+}
+#answer-btn{
+    margin-top: 20px;  
+}
+
+#close-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 99%;
+    /* background-color: red; */
+    margin-bottom: 10px;
+}
+
+#close{
+    margin-right: 10px;
 }
 

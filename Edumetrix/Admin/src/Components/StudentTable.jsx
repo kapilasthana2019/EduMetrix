@@ -46,7 +46,6 @@ class StudentTable extends Component {
         this.setState({
             editPopup: !this.state.editPopup
         })
-        
     }
 
     editButton =(event,props)=>{

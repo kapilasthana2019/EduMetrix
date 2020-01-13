@@ -3,6 +3,7 @@ import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 import '../CssFiles/StudentRecord.css'
 import Tooltip from '@material-ui/core/Tooltip';
+import PaymentRequestEditPopup from './PaymentRequestEditPopup'
 import TextField from '@material-ui/core/TextField';
 
 class SuspendedTable extends Component {
@@ -11,7 +12,9 @@ class SuspendedTable extends Component {
         super(props)
 
         this.state = {
-            posts: []
+            posts: [],
+            editPopup: false,
+            rowdata: ""
         }
     }
 
@@ -31,15 +34,26 @@ class SuspendedTable extends Component {
     }
 
     columnClicked = (id) => {
-        console.log("column click",id);
+        console.log("column click", id);
     }
 
-    paymentUpdateHandle = (event,props)=>{
 
-       
-        
+    setEditOpen = () => {
+
+        this.setState({
+            editPopup: !this.state.editPopup
+        })
+
     }
 
+    paymentUpdateHandle = (event, props) => {
+
+        this.setEditOpen()
+
+        this.setState({
+            rowdata: props.original
+        })
+    }
 
 
     render() {
@@ -48,16 +62,16 @@ class SuspendedTable extends Component {
 
             {
                 headerStyle: {
-                  
-                    borderRight:"1px solid lightGray",
+
+                    borderRight: "1px solid lightGray",
                     padding: '10px',
-                    backgroundColor:"rgb(241, 244, 245)",
-                    },
+                    backgroundColor: "rgb(241, 244, 245)",
+                },
                 Header: "#",
                 accessor: "userId",
                 filterable: false,
                 style: {
-                    borderRight:"1px solid lightGray",
+                    borderRight: "1px solid lightGray",
                     color: "black",
                     textAlign: "centre",
                     fontSize: "14px",
@@ -68,21 +82,21 @@ class SuspendedTable extends Component {
             ,
             {
                 headerStyle: {
-                    borderBottom:"1px solid lightGray",
-                    borderRight:"1px solid lightGray",
-                    color:"#3c8dbc",
-                    fontWeight:"bold",
-                    fontSize:"14px",
-                    padding:"10px",
-                    backgroundColor:"rgb(241, 244, 245)",
-                    whiteSpace:"unset"
-                    },
+                    borderBottom: "1px solid lightGray",
+                    borderRight: "1px solid lightGray",
+                    color: "#3c8dbc",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                    padding: "10px",
+                    backgroundColor: "rgb(241, 244, 245)",
+                    whiteSpace: "unset"
+                },
                 Header: "Student Name",
                 accessor: "id",
                 style: {
-                    borderRight:"1px solid lightGray",
+                    borderRight: "1px solid lightGray",
                     fontSize: "16px",
-                  
+
                 },
 
                 width: 350,
@@ -90,191 +104,196 @@ class SuspendedTable extends Component {
             {
 
                 headerStyle: {
-                    borderBottom:"1px solid lightGray",
-                    borderRight:"1px solid lightGray",
-                    color:"#3c8dbc",
-                    fontWeight:"bold",
-                    fontSize:"14px",
-                    padding:"10px",
-                    backgroundColor:"rgb(241, 244, 245)",
-                    whiteSpace:"unset"
-                    },
+                    borderBottom: "1px solid lightGray",
+                    borderRight: "1px solid lightGray",
+                    color: "#3c8dbc",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                    padding: "10px",
+                    backgroundColor: "rgb(241, 244, 245)",
+                    whiteSpace: "unset"
+                },
                 Header: "Payable Amount",
                 accessor: "title",
 
                 style: {
-                    borderRight:"1px solid lightGray",
+                    borderRight: "1px solid lightGray",
                     color: "black",
                     textAlign: "left",
                     fontSize: "14px",
-                    whiteSpace:"unset"
+                    whiteSpace: "unset"
 
                 },
                 width: 80,
                 sortable: false,
-               
+
             },
             {
                 headerStyle: {
-                    borderBottom:"1px solid lightGray",
-                    borderRight:"1px solid lightGray",
-                    color:"#3c8dbc",
-                    fontWeight:"bold",
-                    fontSize:"14px",
-                    padding:"10px",
-                    backgroundColor:"rgb(241, 244, 245)",
-                    whiteSpace:"unset"
-                    },
+                    borderBottom: "1px solid lightGray",
+                    borderRight: "1px solid lightGray",
+                    color: "#3c8dbc",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                    padding: "10px",
+                    backgroundColor: "rgb(241, 244, 245)",
+                    whiteSpace: "unset"
+                },
 
                 Header: "Status",
                 accessor: "body",
                 style: {
-                    borderRight:"1px solid lightGray",
+                    borderRight: "1px solid lightGray",
                     color: "black",
                     textAlign: "left",
                     fontSize: "14px",
-                    whiteSpace:"unset"
+                    whiteSpace: "unset"
                 },
                 sortable: false,
                 width: 80,
             },
             {
                 headerStyle: {
-                    borderBottom:"1px solid lightGray",
-                    borderRight:"1px solid lightGray",
-                    color:"#3c8dbc",
-                    fontWeight:"bold",
-                    fontSize:"14px",
-                    padding:"10px",
-                    backgroundColor:"rgb(241, 244, 245)",
-                    whiteSpace:"unset"
-                    },
+                    borderBottom: "1px solid lightGray",
+                    borderRight: "1px solid lightGray",
+                    color: "#3c8dbc",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                    padding: "10px",
+                    backgroundColor: "rgb(241, 244, 245)",
+                    whiteSpace: "unset"
+                },
                 Header: "Added Date",
                 accessor: "email",
                 style: {
-                    borderRight:"1px solid lightGray",
+                    borderRight: "1px solid lightGray",
                     color: "black",
                     textAlign: "left",
                     fontSize: "14px",
-                    whiteSpace:"unset"
+                    whiteSpace: "unset"
 
                 },
-                minWidth:160
+                minWidth: 160
             },
             {
                 headerStyle: {
-                    borderBottom:"1px solid lightGray",
-                    borderRight:"1px solid lightGray",
-                    color:"#3c8dbc",
-                    fontWeight:"bold",
-                    fontSize:"14px",
-                    padding:"10px",
-                    backgroundColor:"rgb(241, 244, 245)",
-                    whiteSpace:"unset"
-                    },
+                    borderBottom: "1px solid lightGray",
+                    borderRight: "1px solid lightGray",
+                    color: "#3c8dbc",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                    padding: "10px",
+                    backgroundColor: "rgb(241, 244, 245)",
+                    whiteSpace: "unset"
+                },
                 Header: "Paid Date",
                 accessor: "bonus",
                 style: {
-                    borderRight:"1px solid lightGray",
+                    borderRight: "1px solid lightGray",
                     color: "black",
                     textAlign: "left",
                     fontSize: "14px",
-                    whiteSpace:"unset"
+                    whiteSpace: "unset"
                 },
-                minWidth:100
+                minWidth: 100
             },
             {
                 headerStyle: {
-                    borderBottom:"1px solid lightGray",
-                    borderRight:"1px solid lightGray",
-                    color:"#3c8dbc",
-                    fontWeight:"bold",
-                    fontSize:"14px",
-                    padding:"10px",
-                    backgroundColor:"rgb(241, 244, 245)",
-                    whiteSpace:"unset"
-                    },
+                    borderBottom: "1px solid lightGray",
+                    borderRight: "1px solid lightGray",
+                    color: "#3c8dbc",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                    padding: "10px",
+                    backgroundColor: "rgb(241, 244, 245)",
+                    whiteSpace: "unset"
+                },
 
                 Header: "Lifetime",
                 accessor: "ReferName",
-                
+
                 style: {
-                    borderRight:"1px solid lightGray",
+                    borderRight: "1px solid lightGray",
                     color: "black",
                     textAlign: "left",
                     fontSize: "14px",
-                    whiteSpace:"unset"
+                    whiteSpace: "unset"
                 },
-                minWidth:100
+                minWidth: 100
             },
             {
                 headerStyle: {
-                    borderBottom:"1px solid lightGray",
-                    borderRight:"1px solid lightGray",
-                    color:"black",
-                    fontWeight:"bold",
-                    fontSize:"14px",
-                    padding:"10px",
-                    backgroundColor:"rgb(241, 244, 245)",
-                    },
+                    borderBottom: "1px solid lightGray",
+                    borderRight: "1px solid lightGray",
+                    color: "black",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                    padding: "10px",
+                    backgroundColor: "rgb(241, 244, 245)",
+                },
                 Header: "Actions",
                 Cell: props => {
                     return (
                         <div>
-                            <Tooltip title = "edit">
-                            <button 
-                            onClick = {event=>this.paymentUpdateHandle(event,props)}
+                            <Tooltip title="edit">
+                                <button
+                                    onClick={event => this.paymentUpdateHandle(event, props)}
 
-                            className="editButton">
-                                <img src ={require('../Assets/pencil.png')} id="docIcon"/>
-                            </button>
+                                    className="editButton">
+                                    <img src={require('../Assets/pencil.png')} id="docIcon" />
+                                </button>
                             </Tooltip>
 
-                            <Tooltip title = "Delete">
-                            <button className="editButton">
-                                 <img src ={require('../Assets/delete.png')} id="docIcon"/>
-                            </button>
+                            <Tooltip title="Delete">
+                                <button className="editButton">
+                                    <img src={require('../Assets/delete.png')} id="docIcon" />
+                                </button>
                             </Tooltip>
                         </div>
 
 
                     )
-                },width: 90
+                }, width: 90
                 ,
-                 filterable: false
+                filterable: false
             }
 
 
 
         ]
         return (
-            <div style={{padding:"5px"}}>
-            <ReactTable style={{borderRight:"none",borderLeft:"none"}}
-                columns={columns}
-                noDataText={"please wait..."}
-                data={this.state.posts}
-                filterable = {true}
-                defaultPageSize={1}   
-                // className="highlight"
-                getTrProps={(state, rowInfo, column) => {
+            <div style={{ padding: "5px" }}>
+                <ReactTable style={{ borderRight: "none", borderLeft: "none" }}
+                    columns={columns}
+                    noDataText={"please wait..."}
+                    data={this.state.posts}
+                    filterable={true}
+                    defaultPageSize={1}
+                    // className="highlight"
+                    getTrProps={(state, rowInfo, column) => {
 
-                    if (rowInfo) {
-                        return {
+                        if (rowInfo) {
+                            return {
 
-                            style: {
-                                background: (rowInfo.row.id) % 2 ? 'white' : 'light',
-                                
+                                style: {
+                                    background: (rowInfo.row.id) % 2 ? 'white' : 'light',
+
+                                }
                             }
                         }
-                    }
-                    return {};
+                        return {};
+                    }}
+                >
+                </ReactTable>
 
+                {(this.state.editPopup) ?
+                    <PaymentRequestEditPopup
+                        props={this.props}
+                        open={this.state.editPopup}
+                        refreshEdit={this.setEditOpen}
+                        data={this.state.rowdata}
+                    /> : ""}
 
-                }}
-
-            >
-
-            </ReactTable>
             </div>
         )
     }

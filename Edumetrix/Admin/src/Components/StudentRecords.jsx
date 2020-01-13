@@ -15,6 +15,7 @@ class StudentRecords extends Component {
             open: ""
         }
     }
+    
     handleToggle = () => {
         this.setState({
             open: !this.state.open

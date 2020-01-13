@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import ReactTable from 'react-table'
-import 'react-table/react-table.css'
 import '../CssFiles/ManageEditPopup.css'
 import Checkbox from '@material-ui/core/Checkbox';
 import Tooltip from '@material-ui/core/Tooltip';

@@ -24,6 +24,8 @@ class ImageUploader extends Component {
 
     onDrop = (event) => {
 
+        console.log("getting image.....");
+        
        const file = event[0]
        this.resizingImage(file)
 

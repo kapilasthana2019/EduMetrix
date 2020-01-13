@@ -1,0 +1,31 @@
+#amount-input{
+    margin-top: 10px;
+    border: 1px solid rgb(212, 209, 209);
+    background-color: white;
+ }
+
+ #text-amount{
+ 
+    margin-left: 10px;
+    font-size: 15px;
+ }
+
+ #bank-det{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+ }
+
+ #bank{
+    width: 85%;
+ }
+
+ #crypto-det{
+
+    width: 85%;
+ }
+
+ #checkbox{
+  
+     margin-left: 5px;
+ }

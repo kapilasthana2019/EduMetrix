@@ -26,6 +26,7 @@ uploadImage =()=>{
 
 getImage = (image)=>{
 
+
    this.setState({
        image: image
    })

@@ -3,7 +3,7 @@ import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 import '../CssFiles/StudentRecord.css'
 import Tooltip from '@material-ui/core/Tooltip';
-import ManageEditPopup from './ManageEditPopup'
+import AdminMessagePopup from './AdminMessagePopup'
 
 
 class AdminMessageTable extends Component {
@@ -51,14 +51,14 @@ class AdminMessageTable extends Component {
         
     }
 
-    editButton =(event,props)=>{
+    editButton = async(event,props)=>{
         // console.log("event",props.original);
         this.setEditOpen()
 
-        this.setState({
+       await this.setState({
             editRowData:props.original
         })
-
+        
     }
 
     render() {
@@ -199,11 +199,12 @@ class AdminMessageTable extends Component {
             >
             </ReactTable>
 
-            {(this.state.editPopup) ? <ManageEditPopup
+            {(this.state.editPopup) ? <AdminMessagePopup
             props = {this.props}
             open ={this.state.editPopup}
             refreshEdit={this.setEditOpen}
             data ={this.state.editRowData}/>:""}
+
             </div>
         )
     }
